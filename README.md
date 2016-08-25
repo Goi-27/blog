@@ -1,2 +1,12 @@
-# linux
-study linux
+1. LINUX运维
+2. RHEL7实验快照
+3. RHEL7基本命令
+4. RHEL7文件管理
+5. RHEL7VIM编辑器
+6. RHEL7用户管理
+7. RHEL7文件权限
+8. RHEL7软件包管理
+9. RHEL7文件归档与压缩
+10. RHEL7文件查找
+11. RHEL7进程管理
+12. RHEL7管道与重定向
