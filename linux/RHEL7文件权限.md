@@ -257,6 +257,7 @@ umask掩码为033
 命令：chattr
 作用：可改变存放在ext2、ext3、ext4、xfs、ubifs、reiserfs、jfs等文件系统上的文件或目录属性
 语法：chattr [选项] [属性] [-v（版本）] 文件...
+
 | 选项 | 说明 |
 | :------------- | :------------- |
 | -R | 递归处理，将指定目录下的所有文件及子目录一并处理 |
@@ -313,4 +314,3 @@ lsattr命令是显示chattr命令设置的文件属性。
 [root@VM_200_13_centos ~]# lsattr /etc/passwd
 ---------------- /etc/passwd
 ```
-
