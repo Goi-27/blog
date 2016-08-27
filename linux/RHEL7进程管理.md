@@ -309,7 +309,7 @@ systemd(1)-+-acpid(474)
 | -w或–raw | 显示RAW传输协议的连线状况 |
 | -x或–unix | 此参数的效果和指定-A unix参数相同 |
 | –ip或–inet | 此参数的效果和指定-A inet参数相同 |
-**查看所有的TCP端口**
+**查看所有的TCP端口**
 ```
 [root@VM_200_13_centos ~]# netstat -anlpt
 Active Internet connections (servers and established)
