@@ -1,0 +1,595 @@
+#EntryTag {
+    color: gray;
+    font-size: 9pt;
+    margin-top: 20px;
+}
+.topicListFooter {
+    margin-right: 10px;
+    margin-top: 10px;
+    text-align: right;
+}
+#divRefreshComments {
+    font-size: 9pt;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    text-align: right;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    height: 100%;
+}
+body {
+    background-image: url("http://images.cnblogs.com/cnblogs_com/sakuraph/872775/o_swirl_pattern.png");
+    color: #444;
+    font-family: "Open Sans",Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    margin: 0 10px;
+    white-space: normal;
+    word-break: break-all;
+}
+fieldset, img {
+    border: 0 none;
+}
+.gallery img {
+    height: 100% !important;
+    width: 100% !important;
+}
+ul {
+    word-break: break-all;
+}
+li {
+    list-style: outside none none;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #444;
+    font-family: "Microsoft YaHei","Open Sans",Helvetica,Arial,sans-serif;
+}
+h1 {
+    line-height: 1;
+    margin: 12px 0;
+}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    color: #222;
+}
+a {
+    color: #888;
+    text-decoration: none;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+* {
+    transition: all 0.25s ease 0s;
+}
+a:hover {
+    color: #88f;
+}
+.active {
+    color: #88f;
+    font-weight:bold
+}
+.clear {
+    clear: both;
+}
+input[type="button"] {
+    -moz-user-select: none;
+    background-color: #337ab7;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Microsoft YaHei","Open Sans",Helvetica,Arial,sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.mySearch #q {
+    margin-bottom: 0.5em;
+    width: 100% !important;
+}
+#cnblogs_post_body img {
+    max-width: 100%;
+}
+.postBody a:link, .postBody a:visited, .postBody a:active {
+    text-decoration: none !important;
+}
+#home {
+    background: rgba(255, 255, 255, 0.6) none repeat scroll 0 0;
+    box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+    box-sizing: border-box;
+    margin: 36px auto;
+    padding: 0 32px;
+    width: 900px;
+}
+#header {
+    padding: 20px 0;
+}
+#blogTitle {
+}
+#blogTitle h1 {
+    padding: 0.5em 0;
+}
+#blogTitle h2 {
+    color: #aaa;
+    font-family: "Open Sans",Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+}
+#blogLogo {
+}
+#navigator {
+    margin-top: 20px;
+    text-align: center;
+}
+#navList {
+    border-bottom: 1px solid #ededed;
+    border-top: 1px solid #ededed;
+    display: inline-block !important;
+    float: left;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+}
+#navList li {
+    float: left;
+    line-height: 40px;
+    margin: 0 20px 0 0;
+}
+#navList a {
+    color: #888;
+    float: left;
+    padding-top: 8px;
+    text-align: center;
+    text-decoration: none;
+    width: 5em;
+}
+#navList a:active {
+    color: #88f;
+}
+#navList a:hover {
+    color: #88f;
+    text-decoration: none;
+}
+.blogStats {
+    color: #ccc;
+    float: right;
+    margin-right: 2px;
+    margin-top: 8px;
+    text-align: right;
+}
+#main {
+}
+#mainContent .forFlow {
+}
+#mainContent {
+    float: left;
+    margin: 16px 0;
+    width: 68%;
+}
+.day {
+    margin-bottom: 20px;
+    min-height: 10px;
+    padding-bottom: 5px;
+}
+.dayTitle {
+    border-bottom: 2px solid #666;
+    clear: both;
+    color: #666;
+    display: none;
+    font-size: 110%;
+    font-weight: bold;
+    line-height: 1.5em;
+    margin-bottom: 10px;
+    margin-top: 3px;
+    text-align: center;
+    width: 100%;
+}
+.postTitle {
+    border-bottom: 1px solid #ccc;
+    clear: both;
+    float: right;
+    font-size: 110%;
+    font-weight: bold;
+    line-height: 1.5em;
+    width: 100%;
+}
+.postTitle a:link, .postTitle a:visited, .postTitle a:active {
+    color: #444;
+}
+.postTitle a:hover {
+    color: #f60;
+    text-decoration: none;
+}
+.postCon {
+    clear: both;
+    float: right;
+    line-height: 1.5em;
+    padding: 10px 0;
+    width: 100%;
+}
+.postDesc {
+    clear: both;
+    color: #666;
+    float: right;
+    margin-top: 5px;
+    padding-right: 5px;
+    text-align: right;
+    width: 100%;
+}
+.postDesc a:link, .postDesc a:visited, .postDesc a:active {
+    color: #666;
+}
+.postDesc a:hover {
+    color: #f60;
+    text-decoration: none;
+}
+.postSeparator {
+    border-top: 1px dotted #666;
+    clear: both;
+    float: right;
+    height: 1px;
+    margin: 0 auto 15px;
+    width: 100%;
+}
+#sideBar {
+    color: #888;
+    float: right;
+    margin: 20px 0 10px;
+    width: 24%;
+}
+.newsItem .catListTitle {
+    display: none;
+}
+.newsItem {
+    margin-bottom: 8px;
+    padding: 15px 0 5px;
+}
+#calendar {
+    width: 229px;
+}
+#calendar .Cal {
+    line-height: 1.5em;
+    width: 100%;
+}
+.Cal {
+    border: medium none;
+    color: #666;
+}
+#calendar table a:link, #calendar table a:visited, #calendar table a:active {
+    font-weight: bold;
+}
+#calendar table a:hover {
+    background-color: #f60;
+    color: white;
+    text-decoration: none;
+}
+.CalTodayDay {
+    color: #f60;
+}
+#calendar .CalNextPrev a:link, #calendar .CalNextPrev a:visited, #calendar .CalNextPrev a:active {
+    background-color: white;
+    font-weight: bold;
+}
+.CalDayHeader {
+    border-bottom: 1px solid #ccc;
+}
+.CalTitle {
+    background: white none repeat scroll 0 0;
+    border-bottom: 1px solid #666;
+    color: black;
+    width: 100%;
+}
+.catListTitle {
+    border-bottom: 1px solid black;
+    font-size: 110%;
+    font-weight: bold;
+    line-height: 1.5em;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    text-align: center;
+}
+.catListComment {
+    line-height: 1.5em;
+}
+.divRecentComment {
+    color: #666;
+    text-indent: 2em;
+}
+#sideBarMain ul {
+    line-height: 1.5em;
+}
+#topics {
+    float: left;
+    min-height: 200px;
+    overflow: hidden;
+    padding: 0 0 10px;
+    text-overflow: ellipsis;
+    width: 100%;
+    word-break: break-all;
+}
+#topics .postTitle {
+    border-bottom: 1px solid #999;
+    float: left;
+    font-size: 130%;
+    font-weight: bold;
+    line-height: 1.5em;
+    padding-left: 5px;
+    width: 100%;
+}
+.postBody {
+    border-bottom: 1px solid black;
+    color: #000;
+    line-height: 1.5em;
+    padding: 5px 2px 5px 5px;
+}
+#EntryTag {
+    color: #666;
+}
+#EntryTag a {
+    margin-left: 5px;
+}
+#EntryTag a:link, #EntryTag a:visited, #EntryTag a:active {
+    color: #666;
+}
+#EntryTag a:hover {
+    color: #f60;
+}
+#topics .postDesc {
+    color: #666;
+    float: right;
+    margin-top: 5px;
+    padding-right: 5px;
+    text-align: right;
+    width: 100%;
+}
+.feedback_area_title {
+    border-bottom: 1px solid #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    padding-left: 8px;
+}
+.louzhu {
+    background: transparent url("images/icoLouZhu.gif") no-repeat scroll right top;
+    padding-right: 16px;
+}
+.feedbackListSubtitle {
+    color: #666;
+}
+.feedbackListSubtitle a:link, .feedbackListSubtitle a:visited, .feedbackListSubtitle a:active {
+    color: #666;
+    font-weight: normal;
+}
+.feedbackListSubtitle a:hover {
+    color: #f60;
+    text-decoration: none;
+}
+.feedbackManage {
+    float: right;
+    text-align: right;
+    width: 200px;
+}
+.feedbackCon {
+    background: rgba(0, 0, 0, 0) url("images/comment.gif") no-repeat scroll 5px 0;
+    border-bottom: 1px solid #ccc;
+    line-height: 1.5em;
+    margin-bottom: 1em;
+    min-height: 35px;
+    padding: 15px 18px 10px 40px;
+    width: 100%;
+}
+#divRefreshComments {
+    margin-bottom: 10px;
+    text-align: right;
+}
+.commenttb {
+    width: 320px;
+}
+.entrylistTitle, .PostListTitle, .thumbTitle {
+    border-bottom: 1px solid black;
+    font-size: 110%;
+    font-weight: bold;
+    padding-bottom: 3px;
+    padding-right: 10px;
+    text-align: right;
+}
+.entrylistDescription {
+    color: #666;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    padding-top: 5px;
+    text-align: right;
+}
+.entrylistItem {
+    margin-bottom: 30px;
+    min-height: 20px;
+    padding-bottom: 5px;
+    width: 100%;
+}
+.entrylistPosttitle {
+    border-bottom: 1px solid #666;
+    font-size: 110%;
+    font-weight: bold;
+    line-height: 1.5em;
+    padding-left: 5px;
+    width: 100%;
+}
+.entrylistPosttitle a:hover {
+    text-decoration: none;
+}
+.entrylistPostSummary {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding-left: 5px;
+}
+.entrylistItemPostDesc {
+    color: #666;
+    text-align: right;
+}
+.entrylistItemPostDesc a:link, .entrylistItemPostDesc a:visited, .entrylistItemPostDesc a:active {
+    color: #666;
+}
+.entrylistItemPostDesc a:hover {
+    color: #f60;
+}
+.entrylist .postSeparator {
+    border: medium none;
+    clear: both;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.pager {
+    margin-right: 10px;
+    text-align: right;
+}
+.PostList {
+    border-bottom: 1px solid #ccc;
+    clear: both;
+    margin-bottom: 5px;
+    min-height: 1.5em;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 10px;
+}
+.postTitl2 {
+    float: left;
+}
+.postDesc2 {
+    color: #666;
+    float: right;
+}
+.postText2 {
+    clear: both;
+    color: #666;
+}
+.pfl_feedback_area_title {
+    border-bottom: 1px solid #666;
+    font-weight: bold;
+    line-height: 1.5em;
+    margin-bottom: 10px;
+    text-align: right;
+}
+.pfl_feedbackItem {
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+}
+.pfl_feedbacksubtitle {
+    border-bottom: 1px dotted #666;
+    height: 1.5em;
+    width: 100%;
+}
+.pfl_feedbackname {
+    float: left;
+}
+.pfl_feedbackManage {
+    float: right;
+}
+.pfl_feedbackCon {
+    color: black;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.pfl_feedbackAnswer {
+    color: #f40;
+    text-indent: 2em;
+}
+.tdSentMessage {
+    text-align: right;
+}
+.errorMessage {
+    float: left;
+    width: 300px;
+}
+.mySearch #q {
+    height: 1.4em;
+    width: 175px;
+}
+.divPhoto {
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    padding: 2px;
+}
+.thumbDescription {
+    color: #666;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    padding-top: 5px;
+    text-align: right;
+}
+#footer {
+    border-top: 1px solid #ededed;
+    clear: both;
+    color: #aaa;
+    margin-top: 24px;
+    padding: 20px 0 24px;
+}
+.personInfo {
+    margin-bottom: 20px;
+}
+.pages {
+    text-align: right;
+}
+.postBody {
+    line-height: 1.5em;
+}
+.postBody p, .postCon p {
+    margin: 0 auto 1em;
+    text-indent: 2em;
+}
+.postBody h2 {
+    font-size: 150%;
+    font-weight: bold;
+    margin: 15px auto 2px;
+}
+.postBody h3 {
+    font-size: 120%;
+    font-weight: bold;
+    margin: 15px auto 2px;
+}
+.postBody h4 {
+    color: #333;
+    font-size: 110%;
+    font-weight: bold;
+    margin: 15px auto 2px;
+}
+.postBody h5 {
+    color: #333;
+    font-size: 100%;
+    font-weight: bold;
+    margin: 15px auto 2px;
+}
+.postBody a:link, .postBody a:visited, .postBody a:active {
+    text-decoration: underline;
+}
+.postCon a:link, .postCon a:visited, .postCon a:active {
+    text-decoration: underline;
+}
+.postBody ul, .postCon ul {
+    margin-left: 2em;
+}
+.postBody li, .postCon li {
+    list-style-type: disc;
+    margin-bottom: 1em;
+}
+.postBody blockquote {
+    color: #333;
+    line-height: 1.6em;
+    min-height: 35px;
+    padding: 10px 60px 5px;
+}
