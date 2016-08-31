@@ -35,6 +35,8 @@ linux的shell脚本是一种特殊的应用程序，常见的shell解释器有�
 ### 编写
 编写一个输出两行信息的shell脚本example.sh
 linux不以后缀名区分文件，但为了便于区分则以.sh为后缀表示为shell脚本
+
+必须使用#!指定shell解释器
 ```shell
 #!/bin/bash
 #example shell script
@@ -367,7 +369,7 @@ echo $result
 | :------------- | :------------- |
 | $# | 命令行中位置变量的个数（程序执行了几个位置参数） |
 | $* | 所有位置变量的内容（具体的内容，比如/boot就是一个具体的内容） |
-| $? | 上一条命令执行后返回的状态，0时表示执行正常，非0值表示执行异常或出错 ，判断是否出现错误正常为0异常错误为非0，取值在1-127之间  |
+| $? | 上一条命令执行后返回的状态，0时表示执行正常，非0值表示执行异常或出错<br>判断是否出现错误正常为0异常错误为非0，取值在1-127之间  |
 | $0 | 当前执行的进程/程序名(就是当前执行的命令或程序的名字) |
 
 ```
@@ -440,4 +442,128 @@ file is exist
 has excute permission
 [root@VM_200_13_centos ~]# test -x new.txt && echo "has excute permission"
 has excute permission
+```
+## 脚本应用思路
+1. 确定命令操作（设计并执行任务） 
+2. 编写Shell脚本（组织任务过程） 
+3. 设置计划任务（控制时间，调用任务脚本）
+
+### 统计信息脚本
+1. 当前运行的进程数量
+2. 当前系统的登录用户的数量
+3. 当前使用的磁盘根分区的使用情况
+
+```
+[root@VM_200_13_centos ~]# vim welcom.sh 
+[root@VM_200_13_centos ~]# cat welcom.sh 
+#!/bin/bash
+ps=$(expr $(ps -aux | wc -l) - 1)
+disk=$(df -hT | grep "/$" | awk '{print $6}')
+loginuser=$(who | wc -l)
+echo "ps sum:$ps"
+echo "disk:$disk"
+echo "user sum:$loginuser"
+[root@VM_200_13_centos ~]# . welcom.sh 
+ps sum:82
+disk:10%
+user sum:2
+```
+### 编写脚本实现系统服务启动
+```
+[root@VM_200_13_centos ~]# vim service.sh       
+[root@VM_200_13_centos ~]# . service.sh  start network
+* network.service - LSB: Bring up/down networking
+   Loaded: loaded (/etc/rc.d/init.d/network)
+   Active: active (exited) since Mon 2016-08-15 01:49:50 CST; 2 weeks 2 days ago
+     Docs: man:systemd-sysv-generator(8)
+  Process: 459 ExecStart=/etc/rc.d/init.d/network start (code=exited, status=0/SUCCESS)
+
+Aug 31 18:38:52 VM_200_13_centos systemd[1]: Started LSB: Bring up/down networking.
+Aug 31 18:39:08 VM_200_13_centos systemd[1]: Started LSB: Bring up/down networking.
+Aug 31 18:43:48 VM_200_13_centos systemd[1]: Started LSB: Bring up/down networking.
+Warning: Journal has been rotated since unit was started. Log output is incomplete or unavai
+lable.
+[root@VM_200_13_centos ~]# cat service.sh 
+#!/bin/bash
+systemctl $1 $2
+systemctl status $2
+```
+### 编写监控脚本
+>编写运行状况监控脚本/sh/monitor.sh用于记录CPU负载、内存和交换空间、磁盘空间、最近的用户登录情况等信息，以及当时的时间信息
+
+```
+[root@VM_200_13_centos ~]# vim monitor.sh 
+[root@VM_200_13_centos ~]# chmod +x monitor.sh 
+[root@VM_200_13_centos ~]# ./monitor.sh 
+[root@VM_200_13_centos ~]# vim monitor.sh 
+[root@VM_200_13_centos ~]# cat monitor.sh 
+#!/bin/bash
+mkdir -p /var/log/monitor/
+TodayFile="/var/log/monitor/running.today"
+CurrentTime=$(date +"%Y-%m-%d %H:%M")
+uptime=$(uptime)
+memory=$(free -m)
+disk=$(df -hT)
+LastLoginInfo=$(last -n 20)
+echo "record time:
+$CurrentTime
+cpu load info:
+$uptime
+mem:
+$memory
+disk:
+$disk
+Last 20 Login User Records:
+$LastLoginInfo" > $TodayFile
+
+[root@VM_200_13_centos ~]# . monitor.sh 
+[root@VM_200_13_centos ~]# cat /var/log/monitor/running.today 
+record time:
+2016-08-31 19:02
+cpu load info:
+ 19:02:47 up 16 days, 17:13,  3 users,  load average: 0.00, 0.01, 0.05
+mem:
+              total        used        free      shared  buff/cache   available
+Mem:            993         128          68          12         796         679
+Swap:             0           0           0
+disk:
+Filesystem     Type      Size  Used Avail Use% Mounted on
+/dev/vda1      ext3       20G  1.8G   17G  10% /
+devtmpfs       devtmpfs  488M     0  488M   0% /dev
+tmpfs          tmpfs     497M   24K  497M   1% /dev/shm
+tmpfs          tmpfs     497M   13M  485M   3% /run
+tmpfs          tmpfs     497M     0  497M   0% /sys/fs/cgroup
+tmpfs          tmpfs     100M     0  100M   0% /run/user/0
+Last 20 Login User Records:
+root     pts/1        182.150.21.5     Wed Aug 31 18:38   still logged in   
+root     pts/1        182.150.21.5     Wed Aug 31 18:36 - 18:37  (00:01)    
+root     pts/0        182.150.21.5     Wed Aug 31 18:28   still logged in   
+root     pts/0        182.150.21.5     Wed Aug 31 18:26 - 18:27  (00:01)    
+root     pts/0        182.150.21.5     Wed Aug 31 18:17 - 18:26  (00:09)    
+root     pts/2        182.150.21.5     Wed Aug 31 17:07   still logged in   
+root     pts/2        182.150.21.5     Wed Aug 31 16:48 - 17:07  (00:18)    
+root     pts/2        182.150.21.5     Wed Aug 31 16:21 - 16:48  (00:26)    
+root     pts/1        182.150.21.5     Wed Aug 31 15:34 - 18:05  (02:31)    
+root     pts/0        182.150.21.5     Wed Aug 31 14:38 - 17:22  (02:44)    
+root     pts/0        182.150.21.5     Wed Aug 31 11:05 - 13:20  (02:15)    
+root     pts/0        182.150.21.5     Wed Aug 31 09:56 - 11:05  (01:08)    
+root     pts/0        171.221.0.86     Tue Aug 30 20:36 - 22:54  (02:18)    
+root     pts/0        171.213.12.194   Tue Aug 23 23:43 - 23:56  (00:13)    
+root     pts/0        182.150.21.5     Tue Aug 23 17:27 - 17:27  (00:00)    
+root     pts/0        182.150.21.5     Tue Aug 23 17:15 - 17:27  (00:12)    
+root     pts/0        171.213.12.194   Mon Aug 22 23:19 - 23:19  (00:00)    
+root     pts/0        171.213.12.194   Mon Aug 22 23:14 - 23:19  (00:04)    
+root     pts/0        171.213.12.194   Mon Aug 22 23:12 - 23:14  (00:01)    
+root     pts/0        171.213.12.194   Mon Aug 22 21:35 - 21:39  (00:03)    
+
+wtmp begins Tue Aug  9 21:57:04 2016
+```
+### 编写脚本计算两个数的平方和
+```
+[root@VM_200_13_centos ~]# cat pf.sh 
+#!/bin/bash
+pf=$(expr $1 \* $1 + $2 \* $2)
+echo "$1*$1+$2*$2=$pf"
+[root@VM_200_13_centos ~]# . pf.sh  3 4
+3*3+4*4=25
 ```
